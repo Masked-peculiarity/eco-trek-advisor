@@ -10,6 +10,7 @@ import Weather from "./pages/Weather";
 import Budget from "./pages/Budget";
 import Carbon from "./pages/Carbon";
 import Notes from "./pages/Notes";
+import Map from "./pages/Map";
 import Dashboard from "./pages/Dashboard";
 import NotFound from "./pages/NotFound";
 
@@ -30,6 +31,7 @@ const App = () => (
             <Route path="/budget" element={<Budget />} />
             <Route path="/carbon" element={<Carbon />} />
             <Route path="/notes" element={<Notes />} />
+            <Route path="/map" element={<Map />} />
             <Route path="/dashboard" element={<Dashboard />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />

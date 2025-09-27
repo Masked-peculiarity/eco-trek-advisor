@@ -18,6 +18,7 @@ const Navbar = () => {
     { path: '/budget', label: 'Budget', icon: Calculator },
     { path: '/carbon', label: 'Carbon', icon: Leaf },
     { path: '/notes', label: 'Notes', icon: NotebookPen },
+    { path: '/map', label: 'Map', icon: Mountain },
     { path: '/dashboard', label: 'Dashboard', icon: User },
   ];
 

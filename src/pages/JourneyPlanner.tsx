@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { MapPin, Calendar, Users, Search, Route, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -6,6 +7,7 @@ import { Label } from '@/components/ui/label';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 const JourneyPlanner = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     from: '',
     to: '',
@@ -24,6 +26,10 @@ const JourneyPlanner = () => {
 
   const handleInputChange = (field: string, value: string | number) => {
     setFormData(prev => ({ ...prev, [field]: value }));
+  };
+
+  const handleFindRoutes = () => {
+    navigate('/map');
   };
 
   return (
@@ -146,7 +152,10 @@ const JourneyPlanner = () => {
 
                 {/* Action Buttons */}
                 <div className="flex gap-4 pt-4">
-                  <Button className="flex-1 bg-gradient-forest text-white hover:opacity-90">
+                  <Button 
+                    onClick={handleFindRoutes}
+                    className="flex-1 bg-gradient-forest text-white hover:opacity-90"
+                  >
                     <Search className="h-4 w-4 mr-2" />
                     Find Routes
                   </Button>
